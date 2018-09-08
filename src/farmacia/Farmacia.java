@@ -1,6 +1,10 @@
 package farmacia;
 
-import java.util.Scanner;
+import farmacia.menu.AdminMenu;
+import farmacia.menu.BalconistaMenu;
+import farmacia.menu.CaixaMenu;
+import farmacia.menu.LoginMenu;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 
 /**
@@ -10,41 +14,33 @@ import javax.swing.JOptionPane;
 public class Farmacia {
 
     public static void main(String[] args) {
-        Scanner dados = new Scanner(System.in);
-        while (true) {
-            String op = JOptionPane.showInputDialog("MENU PRINCIPAL:"
-                    + "\n1- Cadastrar Funcionario"
-                    + "\n2- Editar Funcionario"
-                    + "\n3- Remover Funcionario"
-                    + "\n4- Cadastrar Produto"
-                    + "\n5- Editar Produto"
-                    + "\n6- Remover Produto"
-                    + "\n7- Cadastrar Cliente"
-                    + "\n8- Editar cliente"
-                    + "\n9- Remover Cliente"
-                    + "\n10-Consultar Produto "
-                    + "\n11-Realizar Venda"
-                    + "\n0- SAIR");
-            int opmenu = Integer.parseInt(op);
-            if (opmenu == 0) {
-                break;
-            }
-
-            switch (opmenu) {
-                case 1:
-                case 2:
-                case 3:
-                case 4:
-                case 5:
-                case 6:
-                case 7:
-                case 8:
-                case 9:
-                case 10:
-                case 11:
-            }
+        LoginMenu loginMenu = new LoginMenu();
+        HashMap<String, String> authCredentials = loginMenu.login();
+        if(authCredentials.get("login").equals("admin") 
+                && authCredentials.get("pass").equals("admin")){
+            
+            AdminMenu adminMenu = new AdminMenu();
+            adminMenu.startMenuAdmin();
+            
+        } else
+        if(authCredentials.get("login").equals("balconista") && 
+                authCredentials.get("pass").equals("balconista")){
+            
+            BalconistaMenu balconistaMenu = new BalconistaMenu();
+            balconistaMenu.startMenu();
+            
+        } else
+        if(authCredentials.get("login").equals("caixa") &&
+                authCredentials.get("pass").equals("caixa")){
+            
+            CaixaMenu caixaMenu = new CaixaMenu();
+            caixaMenu.startMenu();
+            
+        } else {
+            
+            JOptionPane.showMessageDialog(null, "Credenciais Inválidas.");
+            
         }
-
+        
     }
-
 }

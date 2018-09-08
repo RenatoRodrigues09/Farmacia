@@ -5,6 +5,8 @@
  */
 package farmacia.model;
 
+import java.util.List;
+
 /**
  *
  * @author Otávio
@@ -14,23 +16,20 @@ public class Venda {
 
 	private int codVenda;
 
-	private Produto [ ] arrayProduto;
+	private List<ProdutoVenda> produtos;
 
 	private int quantproduto;
 
 	private Funcionario funcionario;
 
-	private Cliente cliente;
-
 	private Pagamento pagamento;
 
-    public Venda(String dataVenda, int codVenda, Produto[] arrayProduto, int quantproduto, Funcionario funcionario, Cliente cliente, Pagamento pagamento) {
+    public Venda(String dataVenda, int codVenda, List<ProdutoVenda> arrayProduto, int quantproduto, Funcionario funcionario, Pagamento pagamento) {
         this.dataVenda = dataVenda;
         this.codVenda = codVenda;
-        this.arrayProduto = arrayProduto;
+        this.produtos = arrayProduto;
         this.quantproduto = quantproduto;
         this.funcionario = funcionario;
-        this.cliente = cliente;
         this.pagamento = pagamento;
     }
 
@@ -42,8 +41,8 @@ public class Venda {
         return codVenda;
     }
 
-    public Produto[] getArrayProduto() {
-        return arrayProduto;
+    public List<ProdutoVenda> getArrayProduto() {
+        return produtos;
     }
 
     public int getQuantproduto() {
@@ -54,10 +53,7 @@ public class Venda {
         return funcionario;
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
+  
     public Pagamento getPagamento() {
         return pagamento;
     }
@@ -70,8 +66,8 @@ public class Venda {
         this.codVenda = codVenda;
     }
 
-    public void setArrayProduto(Produto[] arrayProduto) {
-        this.arrayProduto = arrayProduto;
+    public void setArrayProduto(List<ProdutoVenda> arrayProduto) {
+        this.produtos = arrayProduto;
     }
 
     public void setQuantproduto(int quantproduto) {
@@ -80,10 +76,6 @@ public class Venda {
 
     public void setFuncionario(Funcionario funcionario) {
         this.funcionario = funcionario;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     public void setPagamento(Pagamento pagamento) {
