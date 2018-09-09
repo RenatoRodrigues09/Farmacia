@@ -20,7 +20,7 @@ public class Farmacia {
                 && authCredentials.get("pass").equals("admin")){
             
             AdminMenu adminMenu = new AdminMenu();
-            adminMenu.startMenuAdmin();
+            adminMenu.startMenu();
             
         } else
         if(authCredentials.get("login").equals("balconista") && 

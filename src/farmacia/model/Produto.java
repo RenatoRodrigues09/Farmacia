@@ -71,5 +71,10 @@ public class Produto {
         this.tipoMed = tipoMed;
     }
 
+    @Override
+    public String toString() {
+        return "Produto = " + "descricaoProduto=" + descricaoProduto + ", codProduto=" + codProduto + ", preco=" + preco + ", quantEstoque=" + quantEstoque + ", tipoMed=" + tipoMed;
+    }
+
 	
 }

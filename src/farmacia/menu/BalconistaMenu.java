@@ -7,7 +7,6 @@ package farmacia.menu;
 
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import utils.NumberUtils;
 
 /**
  *
@@ -42,7 +41,8 @@ public class BalconistaMenu {
         CommonMenu cMenu = new CommonMenu();
         switch (op) {
             case 1: { //CADASTRAR CLIENTE
-
+                cMenu.renderRegisterCliente();
+                startMenu();
                 break;
             }
             case 2: { //EDITAR CLIENTE
@@ -55,7 +55,8 @@ public class BalconistaMenu {
                 break;
             }
             case 4: {  // Consultar Produto "
-
+                cMenu.renderConsultarProduto();
+                startMenu();
                 break;
             }
             case 0: {

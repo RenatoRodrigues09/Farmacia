@@ -28,6 +28,11 @@ public class Cliente extends Pessoa {
         this.codClient = codClient;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente{" + "codClient=" + codClient + '}';
+    }
+
    
 
 }

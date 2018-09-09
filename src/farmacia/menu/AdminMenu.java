@@ -33,12 +33,12 @@ public class AdminMenu {
                 + "\n0- SAIR");
     }
 
-    public void startMenuAdmin() {
+    public void startMenu() {
         System.out.println(mainMenuOptions());
         int op = sc.nextInt();
         if (op < 0 && op > 11) {
             System.out.println("OPÇÃO INVÁLIDA");
-            startMenuAdmin();
+            startMenu();
         } else {
             renderNextMenu(op);
         }
@@ -75,7 +75,8 @@ public class AdminMenu {
 
             }
             case 7: {
-                //Cadastrar Cliente"
+                cMenu.renderRegisterCliente();
+                startMenu();
                 break;
             }
             case 8: {
@@ -87,13 +88,13 @@ public class AdminMenu {
                 break;
             }
             case 10: {
-                // Consultar Produto "
+                cMenu.renderConsultarProduto();
+                startMenu();
                 break;
             }
             case 11: {
-                // Realizar Venda"
                 cMenu.renderRegisterVenda();
-                startMenuAdmin();
+                startMenu();
                 break;
             }
             case 0: {
@@ -102,7 +103,7 @@ public class AdminMenu {
                 if (resposta == JOptionPane.YES_OPTION) {
                     break;
                 } else {
-                    startMenuAdmin();
+                    startMenu();
                 }
             }
         }

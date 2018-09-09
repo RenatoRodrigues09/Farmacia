@@ -21,7 +21,7 @@ public class Endereco {
 
 	private String estado;
 
-    public Endereco(String rua, String cep, String bairro, String cidade, String estado, Pessoa pessoa) {
+    public Endereco(String rua, String cep, String bairro, String cidade, String estado) {
         this.rua = rua;
         this.cep = cep;
         this.bairro = bairro;
@@ -70,4 +70,11 @@ public class Endereco {
         this.estado = estado;
     }
 
+    @Override
+    public String toString() {
+        return "Endereco{" + "rua=" + rua + ", cep=" + cep + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + '}';
+    }
+
+    
+    
 }

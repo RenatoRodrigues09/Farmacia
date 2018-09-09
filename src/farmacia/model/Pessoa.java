@@ -92,5 +92,10 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", cpf=" + cpf + ", cnpj=" + cnpj + ", telefone=" + telefone + ", dataNascimento=" + dataNascimento + ", rg=" + rg + ", endereco=" + endereco + '}';
+    }
+
    
 }
